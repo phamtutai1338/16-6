@@ -1,28 +1,27 @@
-﻿
-using lag6._2;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-class Program
+namespace generic
 {
-    static void Main(string[] args)
+
+    class Program
     {
-        Thermostat thermostat = new Thermostat();
-        Heater heater = new Heater(60);
-        thermostat.OnTemperatureChange +=
-             heater.OnTemperatureChanged;
-        Heater heaterCuong = new Heater(100);
-        thermostat.OnTemperatureChange +=
-             heaterCuong.OnTemperatureChanged;
-
-        Cooler cooler = new Cooler(80);
-        thermostat.OnTemperatureChange +=
-             cooler.OnTemperatureChanged;
-
-        string temperature;
-        Console.Write("Enter temperature: ");
-        temperature = Console.ReadLine();
-        thermostat.CurrentTemperature = int.Parse(temperature);
-        Console.ReadLine();
+        public static void Main(string[] args)
+        {
+            Pair<String> pair = new Pair<string>("An", "Nga");
+            Console.WriteLine("({0},{1})", pair.First,
+                pair.Second);
+            Console.ReadLine();
+        }
     }
+
+
+
+
+
+
+
 }
-
-
